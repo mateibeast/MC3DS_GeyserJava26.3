@@ -1,0 +1,6 @@
+name: MC3DSBridge
+version: 0.1.26
+main: dev.mc3ds.bridge.BridgePlugin
+api-version: '1.13'
+description: Lets Minecraft 3DS (fan update 1.10, PE protocol 113) players join this server. Needs ViaVersion + ViaBackwards.
+softdepend: [floodgate, ViaVersion, ViaBackwards]

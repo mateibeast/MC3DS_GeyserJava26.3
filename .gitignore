@@ -1,0 +1,13 @@
+build/
+test/out/
+test/run/
+test/sel/
+*.class
+*.jar
+key.pem
+bridge.properties
+skin-cache.properties
+skins/
+.DS_Store
+.idea/
+*.iml

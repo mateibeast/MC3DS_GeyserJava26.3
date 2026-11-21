@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Build jar
+        run: sh build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MC3DSBridge
+          path: build/MC3DSBridge.jar
+      - name: Attach jar to the release (tags like v0.1.26)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/MC3DSBridge.jar
