@@ -1,0 +1,2 @@
+Main-Class: dev.mc3ds.bridge.Main
+Implementation-Version: 0.1.26
